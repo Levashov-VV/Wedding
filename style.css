@@ -1,0 +1,915 @@
+@font-face {
+  font-family: 'Felidae';
+  src: url('./Fonts/Felidae.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Actinia';
+  src: url('./Fonts/Actinia-Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Antaric';
+  src: url('./Fonts/Antarctic.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+html {
+  width: 100vw;
+  background-color: #fff;
+}
+
+.header-img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: none;
+}
+
+.note {
+  display: block;
+}
+
+.header-title {
+  position: absolute;
+  top: 75vh;
+  left: 50vw;
+  width: 80vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-family: 'Antaric';
+  font-size: 8vh;
+  line-height: 1.2;
+}
+
+.header-date {
+  position: relative;
+  top: 16vh;
+}
+
+.block-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section {
+  margin: 5vh 0px;
+}
+
+.subtitle-text {
+  font-family: 'Felidae';
+  font-size: 10vh;
+  text-align: center;
+  margin: 0vh 10vw;
+}
+
+.text {
+  font-family: 'Felidae';
+  font-size: 4vh;
+  line-height: 5vh;
+  text-align: center;
+  padding: 0 10vw;
+}
+
+.line-horizontal {
+  border: 1px solid #000000;
+  width: 20vw;
+  margin-top: 5vh;
+}
+.line-vertical {
+  transform: rotate(90deg);
+  border: 1px solid #000000;
+  width: 8vw;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.line-verticals {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh 0px;
+}
+
+.date {
+  row-gap: 4vh;
+}
+.subTitle {
+  font-family: 'Felidae';
+  font-size: 8vh;
+  text-align: center;
+}
+
+.section-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5vh 0px;
+}
+.section-img {
+  width: 25vw;
+  height: 80vh;
+  border-radius: 12px;
+}
+.svg-image {
+  width: 60px;
+  height: auto;
+}
+
+.svg-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.timing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5vh 0px;
+  font-family: 'Felidae';
+  font-size: 4vh;
+  line-height: 5vh;
+  text-align: center;
+}
+
+.location {
+  position: absolute;
+  width: 100vw;
+  font-family: 'Felidae';
+  font-size: 4vh;
+  line-height: 5vh;
+}
+
+.location-img {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.6;
+}
+
+.location-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 40vh;
+  margin: 15vh 0px;
+  font-family: 'Felidae';
+  font-size: 4vh;
+  line-height: 5vh;
+  text-align: center;
+  color: #000;
+  opacity: 1;
+}
+
+.location-block {
+  position: relative;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 2vh;
+}
+
+.btn {
+  position: relative;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 6em;
+  transition: all 0.2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: black;
+  background-color: white;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+  border-radius: 8px;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+#map {
+  width: 100%;
+  height: 500px;
+  margin-top: 20px;
+}
+
+.map {
+  width: 100%;
+  height: 500px;
+}
+
+.dressCode {
+  margin-top: -5vh;
+}
+
+.colors {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 5vw;
+}
+.color-block {
+  width: 10vw;
+  height: 10vh;
+  border: 1px solid black;
+  border-radius: 40px;
+}
+.color-block:first-child {
+  background-color: #f0f1f2;
+}
+
+.color-block:nth-child(2) {
+  background-color: #d9d3c7;
+}
+.color-block:nth-child(3) {
+  background-color: #888c79;
+}
+.color-block:nth-child(4) {
+  background-color: #8d8c8c;
+}
+.color-block:nth-child(5) {
+  background-color: #262626;
+}
+
+.dress-block {
+  display: flex;
+  flex-direction: column;
+  margin: 2vh 0px;
+  font-family: 'Felidae';
+  font-size: 4vh;
+  line-height: 5vh;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vh 0px;
+  font-family: 'Felidae';
+  font-size: 4vh;
+  line-height: 5vh;
+}
+.details-img {
+  width: 100vw;
+  height: 60vh;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+
+.line {
+  width: 20vw;
+  border: 1px solid black;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Felidae';
+  font-size: 4vh;
+  line-height: 8vh;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vh 0px;
+  font-family: 'Felidae';
+  font-size: 3.5vh;
+  line-height: 5vh;
+}
+.name-input {
+  width: 80vw;
+  height: 5vh;
+  font-family: 'Felidae';
+  font-size: 3.5vh;
+  color: #000000;
+  border: none;
+  border: #000000 2px solid;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.name-input:focus {
+  outline: none;
+  border-bottom: #000000 2px solid;
+}
+
+.name-input:focus::placeholder {
+  opacity: 0;
+}
+
+.name-input::placeholder {
+  color: #000000;
+  opacity: 0.8;
+}
+
+.subText {
+  opacity: 0.6;
+  font-size: 2.5vh;
+}
+
+.visit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 10vw;
+}
+
+.form-text {
+  font-size: 3vh;
+}
+
+.form-button {
+  margin-top: 15px;
+}
+
+.drink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vh 0px;
+  font-family: 'Felidae';
+  font-size: 4vh;
+  line-height: 5vh;
+}
+
+.drink-input {
+  width: 80vw;
+  height: 5vh;
+  font-family: 'Felidae';
+  font-size: 3.5vh;
+  color: #000000;
+  border: none;
+  border: #000000 2px solid;
+  border-radius: 20px;
+  text-align: center;
+}
+
+input {
+  background-color: none;
+}
+.drink-input:focus {
+  outline: none;
+  border-bottom: #000000 2px solid;
+}
+
+.drink-input:focus::placeholder {
+  opacity: 0;
+}
+
+.drink-input::placeholder {
+  color: #000000;
+  opacity: 0.8;
+}
+
+.button {
+  height: 75px;
+  width: 300px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-txt {
+  font-family: 'Felidae';
+  font-size: 18px;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.type1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #333;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+.button:hover {
+  box-shadow: 1px 1px 200px #252525;
+  color: #fff;
+  border: none;
+}
+
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-family: 'Felidae';
+}
+
+.link {
+  color: blue;
+  font-family: 'Felidae';
+  text-decoration: underline;
+}
+
+.telegram-block {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 0 50vh;
+  line-height: 3vh;
+}
+
+.telegram {
+  width: 50px;
+  height: 50px;
+}
+
+.footer-img {
+  display: none;
+  width: 100vw;
+  object-fit: cover;
+  object-position: center;
+}
+@keyframes header-images {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header-images {
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+
+.header-title {
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+
+.fade-in-up {
+  animation: 1s both fadeInUp;
+}
+
+.animate__zoomIn {
+  animation: 1s both zoomIn;
+}
+
+@media (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  main {
+    width: 100vw;
+  }
+
+  .section {
+    width: 100vw;
+  }
+  .header-img {
+    display: none;
+  }
+  .note {
+    display: block;
+  }
+
+  .footer-img {
+    display: none;
+  }
+
+  .header-img {
+    display: block;
+    width: 100vw;
+    height: 91vh;
+  }
+
+  .note {
+    display: none;
+  }
+
+  .header-title {
+    position: absolute;
+    top: 75vh;
+    font-size: 5vw;
+  }
+
+  .header-date {
+    font-size: 5vw;
+  }
+
+  .footer-img {
+    display: block;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .subtitle-text {
+    font-size: 8vw;
+  }
+
+  .greating-block {
+    width: 100vw;
+    padding: 0 1vw;
+  }
+
+  .line-horizontal {
+    width: 30vw;
+  }
+
+  .line-vertical {
+    width: 15vw;
+    margin: 5vw 0;
+  }
+
+  .text {
+    font-size: 4vw;
+  }
+
+  .subTitle {
+    font-size: 8vw;
+  }
+
+  .section-images {
+    width: 100vw;
+    display: flex;
+  }
+
+  .section-img {
+    width: 30vw;
+    height: 50vh;
+  }
+
+  .timing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2vw;
+    font-size: 4vw;
+  }
+
+  .timing p {
+    font-size: 3.5vw;
+  }
+
+  .svg-image {
+    width: 6vw;
+  }
+
+  .location-text {
+    margin: 11vh 0;
+  }
+
+  .location-info {
+    margin: 0 0 3vh 0;
+  }
+
+  .location-info h3 {
+    font-size: 5vw;
+  }
+
+  .btn {
+    font-size: 3vw;
+  }
+
+  .colors {
+    column-gap: 4vw;
+  }
+
+  .color-block {
+    width: 15vw;
+    height: 8vh;
+  }
+
+  .name-input::placeholder {
+    font-size: 3vw;
+  }
+
+  .drink-input::placeholder {
+    font-size: 1.8vw;
+  }
+
+  .telegram-block {
+    margin: 0 35vw;
+  }
+}
+
+@media (max-width: 821px) {
+  .header-img {
+    display: block;
+  }
+
+  .note {
+    display: none;
+  }
+
+  .header-title {
+    position: absolute;
+    top: 80vh;
+    font-size: 5vw;
+  }
+
+  .header-date {
+    font-size: 5vw;
+  }
+
+  .header-img {
+    width: 100vw;
+    height: 100vh;
+  }
+  .footer-img {
+    display: block;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .subtitle-text {
+    font-size: 8vw;
+  }
+
+  .line-horizontal {
+    width: 30vw;
+  }
+  .line-vertical {
+    width: 15vw;
+    margin: 5vw 0;
+  }
+
+  .text {
+    font-size: 4vw;
+  }
+
+  .subTitle {
+    font-size: 8vw;
+  }
+
+  .section-img {
+    width: 30vw;
+    height: 50vh;
+  }
+
+  .timing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2vw;
+    font-size: 4vw;
+  }
+  .timing p {
+    font-size: 3.5vw;
+  }
+
+  .svg-image {
+    width: 6vw;
+  }
+
+  .location-text {
+    margin: 11vh 0;
+  }
+
+  .location-info {
+    margin: 0 0 3vh 0;
+  }
+
+  .location-info h3 {
+    font-size: 5vw;
+  }
+
+  .btn {
+    font-size: 3vw;
+  }
+
+  .colors {
+    column-gap: 4vw;
+  }
+
+  .color-block {
+    width: 15vw;
+    height: 8vh;
+  }
+
+  .telegram-block {
+    margin: 0 35vw;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  main {
+    width: 100vw;
+  }
+
+  .header-title {
+    position: absolute;
+    top: 71vh;
+    font-size: 11vw;
+    line-height: 8vh;
+    color: #fff;
+  }
+
+  .header-date {
+    font-size: 8vw;
+    margin-bottom: 15vh;
+  }
+
+  .header-img {
+    width: 100vw;
+    height: 100vh;
+    object-position: left;
+  }
+
+  .section-img {
+    width: 25vw;
+    height: 20vh;
+  }
+
+  .section-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10vw;
+  }
+  .greating-block {
+    width: 100vw;
+  }
+
+  .form {
+    font-size: 1.8vh;
+    line-height: 6vh;
+  }
+
+  .name {
+    margin: 0;
+  }
+
+  .form-text {
+    font-size: 1.8vh;
+  }
+
+  .subText {
+    padding-top: 1vh;
+  }
+
+  .button {
+    width: 40vw;
+    height: 5vh;
+  }
+
+  .btn-txt {
+    font-size: 1.6vh;
+  }
+  .feedback {
+    width: 100vw;
+  }
+
+  .telegram {
+    width: 40px;
+    height: 40px;
+  }
+
+  .telegram-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    font-size: 2.5vh;
+  }
+
+  .text-link {
+    margin: 0;
+    padding-bottom: 2vh;
+  }
+
+  .footer-img {
+    display: block;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center;
+  }
+}

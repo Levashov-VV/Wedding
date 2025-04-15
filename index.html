@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <title>Свадебное приглашение</title>
+  <link rel="icon" type="image/x-icon" href="./Images/Logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+      <div class='header-images'>
+        <img class='header-img' src="./Images/Header-img.jpg" alt="header-img" loading='lazy'>
+        <img class='header-img note' src="./Images/Header-img(Note).jpg" alt="header-img" loading='lazy'>
+      </div>
+      <div class='header-title'>
+        <div class='header-date'>
+          <h3>20 сентября 2025</p>
+        </div>
+        <div>
+          <h1>Вячеслав и Мария</h1>
+        </div>
+      </div>
+    </header>
+    <main>
+        <section class='block-center section wow fade-in-up'>
+          <div class='greating-block'>
+            <h3 class='subtitle-text'>Дорогие гости</h3>
+          </div>
+          <div class='line-horizontal'></div>
+          <div class='greating-block'>
+            <p class='text'>
+              Совсем скоро наступит день, который будет для нас особенным - ДЕНЬ НАШЕЙ СВАДЬБЫ!</br>
+              Мы будем счастливы оказаться в окружении близких нам людей, поэтому приглашаем Вас разделить с нами этот праздник!
+          </div>
+          <div class='line-vertical'></div>
+        </section>
+        <section class='section wow fade-in-up'>
+          <div class='block-center date'>
+            <h2 class='subTitle'>SAVE THE DATE</h2>
+            <h2 class='subTitle'>20/09/2025</h2>
+          </div>
+        <div class='section-images wow animate__zoomIn'>
+          <div>
+            <img class='section-img' src="./Images/Img-block-1.jpg" alt="section-img" loading='lazy'>
+          </div>
+          <div>
+            <img class='section-img' src="./Images/Img-block-2.jpg" alt="section-img" loading='lazy'>
+          </div>
+          <div>
+            <img class='section-img' src="./Images/Img-block-3.jpg" alt="section-img" loading='lazy'>
+          </div>
+        </section>
+        <section>
+          <div class='line-verticals'>
+            <div class='line-vertical'></div>
+          </div>
+          <div>
+            <h2 class='subTitle wow fade-in-up'>TIMING OF THE DAY</h2>
+          </div>
+          <div class='timing wow fade-in-up'>
+            <div>
+              <div class='svg-block'>
+                <div>
+                  <img class='svg-image'  src='./Images/Welcome.svg' loading='lazy'/>
+                </div>
+                <h3>
+                  15:30 - ВЕЛКОМ
+                </h3>
+              </div>
+              <div>
+                <p>
+                  Время пролетит незаметно за игристым на фуршете и общением с другими гостями.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div class='svg-block'>
+                <div>
+                  <img class='svg-image'  src='./Images/Rings.svg' loading='lazy'/>
+                </div>
+                <h3>
+                  16:00 - ЦЕРЕМОНИЯ
+                </h3>
+              </div>
+              <div>
+                <p>
+                  Приготовьте носовые платочки для самого трогательного момента.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div class='svg-block'>
+                <div>
+                  <img class='svg-image'  src='./Images/Camera.svg' loading='lazy'/>
+                </div>
+                <h3>
+                  16:15 - ФОТОПАУЗА
+                </h3>
+              </div>
+              <div>
+                <p>
+                  Никто не останется без ярких кадров с нами на память об этом дне.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div class='svg-block'>
+                <div>
+                  <img class='svg-image'  src='./Images/Dinner.svg' loading='lazy'/>
+                </div>
+                <h3>
+                  16:30 - БАНКЕТ
+                </h3>
+              </div>
+              <div>
+                <p>
+                  Время вкусной еды, танцев и веселья.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div class='svg-block'>
+                <div>
+                  <img class='svg-image'  src='./Images/Just-married.svg'/>
+                </div>
+                <h3>
+                  22:30 - ОКОНЧАНИЕ МЕРОПРИЯТИЯ
+                </h3>
+              </div>
+              <div>
+                <p>
+                  К сожалению, даже такой прекрасный вечер может закончиться.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class='location wow fade-in-up'>
+          <div>
+            <img class='location-img' src="./Images/location.jpg" alt="location-img" loading='lazy'>
+          </div>
+        </section>
+        <section class='location location-block wow fade-in-up'>
+          <div class='location-text'>
+            <div>
+              <h2 class='subTitle'>LOCATION</h2>
+            </div>
+            <div class='location-info'>
+              <div>
+                <h3>Эко-парк "Амбар Холл"</h3>
+              </div>
+              <div>
+                <h3>г.Волгоград, улица Джамбула Джабаева, 60</h3>
+              </div>
+              <div>
+                <button class='btn' onclick="openModal(); return false;">Посмотреть карту</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div>
+        <div id="mapModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="map">
+              <iframe class='map' src="https://yandex.ru/map-widget/v1/?um=constructor%3A8b0c6631054178795824194c771888e92f31b2e9c2cd79d5669752c6d273dcdc&amp;source=constructor" frameborder="0"></iframe>
+            </div>
+          </div>
+        </div>
+        <section class='dressCode wow fade-in-up'>
+          <div class='line-verticals wow fade-in-up'>
+            <div class='line-vertical'></div>
+          </div>
+          <div>
+            <h2 class='subTitle'>
+              DRESS CODE
+            </h2>
+          </div>
+          <div class='dress-block'>
+            <div>
+              <p class='text'>Нам будет приятно, если вы поддержите стилистику нашей свадьбы и используете в своих нарядах предложенные цвета.</p>
+            </div>
+            <div class='colors'>
+              <div class='color-block'></div>
+              <div class='color-block'></div>
+              <div class='color-block'></div>
+              <div class='color-block'></div>
+              <div class='color-block'></div>
+            </div>
+            <div>
+              <p class='text'>Свадьба будет на открытом воздухе не забудьте посмотреть прогноз погоды.</br>
+                Мы очень надеемся, что Вы будете много танцевать - возьмите удобную обувь! 
+                <div class='line-verticals'>
+                  <div class='line-vertical'></div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <section class='details wow fade-in-up'>
+          <div>
+            <h2 class='subTitle'>DETAILS</h2>
+          </div>
+          <div>
+            <p class='text'>
+              Пожалуйста, не дарите живые цветы. Хорошей альтернативой может стать бутылка вина для нашего семейного бара.
+            </p>
+          </div>
+          <div class='line'>
+          </div>
+          <div>
+            <p class='text'>
+              Не ломайте голову над подароком. Ваши пожелания в конвертах помогут осуществить нашу заветную мечту.
+            </p>
+          </div>
+          <div>
+            <img class='details-img' src="./Images/Details.jpeg" alt="details-img" loading='lazy'>
+          </div>
+          <div class='line-verticals'>
+            <div class='line-vertical'></div>
+          </div>
+        </section>
+        <section class='form wow fade-in-up'>
+          <div>
+            <h3 class='subTitle wow fade-in-up'>ДОРОГИЕ ГОСТИ</h3>
+            <p class='text'>Пожалуйста, подтвердите своё присутствие до 1 июля и заполните эту форму, чтобы мы могли учесть Ваши пожелания</p>
+          </div>
+          <div>
+            <form action="telegram.php" method="post" class="form" id="form">
+              <div class="name" >
+                <input class="name-input" id="name" name="name" required placeholder="Введите вашу фамилию и имя"></input>
+                <label  class="form-text subText">если вы будете с парой, то внесите фамилию и имя пары</label>
+              </div>
+              <div class="visit fade-in-up">
+                <div>У вас получится прийти на свадьбу?</div>
+                <label class="form-text">
+                <input id="visit1" name="visit" type="radio" value="Да">
+                  <span>Обязательно приду</span>
+                </label>
+                <label class="form-text">
+                  <input id="visit2" name="visit" type="radio" value="Нет">
+                  <span>К сожалению, не смогу прийти</span>
+                </label>
+              </div>
+              <div class="drink">
+                <input class="drink-input" id="drink" name="drink" required placeholder="Какой алкоголь вы предпочитаете (вино полусладкое, вино сухое/полусухое, крепкий алкоголь или вы не пьёте)"></input>
+                <label class="form-text">
+              </div>
+              <button type="submit" class="form-button button type1">
+                <span class="btn-txt">
+                  Отправить
+                </span>
+              </button>
+            </form>
+          </div>
+          <div class='feedback'>
+            <p class='text wow fade-in-up'>По всем вопросам Вы можете обращаться к нам </br>
+              <div class='telegram-block'>
+                <a href='https://t.me/llElessarll' target="_blank" class='telegram-link'>
+                  <img class='telegram' src="./Images/Telegram.svg" alt="telegram" loading='lazy'/>
+                  <div>Вячеслав</div>
+                </a><br/>
+                <a href='https://t.me/mery_whale' target="_blank" class='telegram-link two'>
+                  <img class='telegram' src="./Images/Telegram.svg" alt="telegram" loading='lazy'/>
+                  <div>Мария</div>
+                </a>
+              </div>
+              </p>
+          </div>
+          <div class='text-link'>
+            <p class='text wow fade-in-up'>Вы можете перейти по этой <a class='link' href='https://t.me/+VNnL32GCyTVlMGZi'>ссылке</a>, чтобы добавиться в группу, в которую в дальнейшем будут направляться фото и видео со свадьбы</p>
+          </div>
+          <div>
+            <h3 class='subTitle wow fade-in-up'>БУДЕМ ВАС ОЧЕНЬ ЖДАТЬ!</h3>
+          </div>
+        </section>
+    </main>
+    <footer>
+      <img class='footer-img' src="./Images/Footer-img.png" alt="footer-img" loading='lazy'>
+    </footer>
+    <script src="./main.js"></script>
+    <script src="./order.js" ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=9ad29eb0-82fe-4ed9-8a2e-e96f17c71fbb&lang=ru_RU"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>
